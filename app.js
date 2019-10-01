@@ -2,8 +2,11 @@ let express = require('express')
 let path = require('path')
 let hbs = require('hbs')
 let app = express()
+let port = process.env.PORT || 4200
+
 let forecast = require('./utils/forecast')
 let geocode = require('./utils/geocode')
+
 
 //define paths for express config
 let publicDirectoryPath = path.join(__dirname, 'public')
@@ -80,7 +83,6 @@ app.get('*', (req, res) => {
     })
 })
 
-let port = 1010
 app.listen(port, (err, done) => {
     if (err) {
         return console.log('err connecting to server')
