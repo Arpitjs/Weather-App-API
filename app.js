@@ -55,13 +55,13 @@ app.get('/weather', (req, res) => {
             //j error cha tei pathaeko as object
             return res.send({errors: errors})
         }
-        forecast('lang=en', latitude, longitude, (errors, {summary,temperature,rain} = {}) => {
+        forecast('lang=en', latitude, longitude, (errors, {summary,temperature,rain, lowTemp, highTemp, windSpeed} = {}) => {
             if (errors) {
                 return res.send({errors: errors})
             }
             res.send({
                 geocode: `the longitude and latititude of ${req.query.address} are ${latitude} and ${longitude}`,
-                forecast: `${summary} The temperature is ${temperature} and there is ${rain} % chance of rain.`,
+                forecast: `${summary} The temperature is ${temperature} and there is ${rain} % chance of rain. The low temperature will be ${lowTemp} The highest temperature can be upto ${highTemp}. The Wind Speed is ${windSpeed}.`,
                 location
             })
         })

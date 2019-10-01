@@ -8,6 +8,9 @@ let forecast = (language, latitude, longitude, cb) => {
         } else {
             cb(null, {
                 summary: response.body.daily.data[0].summary,
+                highTemp: response.body.daily.data[0].temperatureHigh,
+                lowTemp: response.body.daily.data[0].temperatureLow,
+                windSpeed: response.body.daily.data[0].windSpeed,
                 temperature: response.body.currently.temperature,
                 rain: response.body.currently.precipProbability
             })
