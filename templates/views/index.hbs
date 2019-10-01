@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+   <title>Home</title>
+   <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main-content">
+  {{>header}}
+  <p> get weather info, wherever you are. </p>
+
+  <form>
+    <input placeholder="Location">
+    <button> Search </button>
+  </form>
+
+  <p id="msg-1"></p>
+  <p id="msg-2"></p>
+    </div>
+  
+    {{>footer}}
+   <script src="./JS/index.js"></script>
+
+</body>
+</html>
