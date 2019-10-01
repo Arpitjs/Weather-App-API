@@ -38,8 +38,8 @@ app.get('/about', (req, res) => {
 
 app.get('/help', (req, res) => {
     res.render('Help', {
-        msg: 'i am not here to help you, fuck you. fuck yourself, dick.',
-        title: 'help',
+        msg: 'Here to help, if you have any issues.',
+        title: 'Help',
         name: 'arpit js'
     })
 })
@@ -47,7 +47,7 @@ app.get('/help', (req, res) => {
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
         return res.send({
-            errors: 'plz provide address man'
+            errors: 'Please provide an address.'
         })
     }
     geocode(req.query.address, (errors, {latitude,longitude, location} = {}) => {
